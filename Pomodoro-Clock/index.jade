@@ -1,0 +1,13 @@
+div(class='container')
+    h2(class='center-align') Pomodoro Clock
+    div(id='progress-bar-container')
+    div(class='row')
+        div(class='session-slider-container col s12 m8 l6 offset-m2 offset-l3')
+            label(id='session-slider-label') Session Duration: 25 minute(s)
+            input(id='session-slider' type='range' min='1' max='60' value='25')
+    div(class='row')
+        div(class='break-slider-container col s12 m8 l6 offset-m2 offset-l3')
+            label(id='break-slider-label') Break Duration: 5 minute(s)
+            input(id='break-slider' type='range' min='1' max='30' value='5')
+    div(class='control-button-container center-align')
+        a(id='control-button' class='btn') Start
