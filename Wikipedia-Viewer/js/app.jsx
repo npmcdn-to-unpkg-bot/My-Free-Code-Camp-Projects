@@ -50,14 +50,18 @@ var SearchBox = React.createClass({
     },
     render: function() {
         return (
-            <div className="row">
-                <form onSubmit={this.handleFormSubmit}>
-                    <div className="col s7 m8 l6 offset-m1 offset-l2">
-                        <input id="search" className="" type="search" placeholder="Enter search term here" required value={this.state.text} onChange={this.handleTextChange} /> 
+            <div>
+                <div className="row">
+                    <form onSubmit={this.handleFormSubmit}>
+                        <div className="col s12 m8 l6 offset-m2 offset-l3">
+                            <input id="search" className="" type="search" placeholder="Enter search term here" required value={this.state.text} onChange={this.handleTextChange} /> 
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <div className="center-align" id="randomButton"> 
+                        <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" className="btn">Random</a>
                     </div>
-                </form>
-                <div className="col s5 m2 l1" id="randomButton"> 
-                    <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" className="btn">Random</a>
                 </div>
             </div>
         );
