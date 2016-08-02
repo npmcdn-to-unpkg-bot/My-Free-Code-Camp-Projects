@@ -1,16 +1,16 @@
 "use strict";
 
 var App = React.createClass({
-	displayName: "App",
+    displayName: "App",
 
-	getInitialState: function getInitialState() {
-		return {
-			searchResults: null
-		};
-	},
-	setSearchResults: function setSearchResults(searchTerm) {
-		var api = "https://en.wikipedia.org/w/api.php?action=query&format=json&generator=search&gsrlimit=10&prop=extracts&exchars=200&exintro&exlimit=max&explaintext&&callback=?&gsrsearch=" + searchTerm;
-		$.getJSON(api, function (data) {
+    getInitialState: function getInitialState() {
+        return {
+            searchResults: null
+        };
+    },
+    setSearchResults: function setSearchResults(searchTerm) {
+        var api = "https://en.wikipedia.org/w/api.php?action=query&format=json&generator=search&gsrlimit=10&prop=extracts&exchars=200&exintro&exlimit=max&explaintext&&callback=?&gsrsearch=" + searchTerm;
+        $.getJSON(api, function (data) {
             if (data.query) {
                 var arr = [];
                 for (var prop in data.query.pages) {
@@ -56,23 +56,31 @@ var SearchBox = React.createClass({
     render: function render() {
         return React.createElement(
             "div",
-            { className: "row" },
+            null,
             React.createElement(
-                "form",
-                { onSubmit: this.handleFormSubmit },
+                "div",
+                { className: "row" },
                 React.createElement(
-                    "div",
-                    { className: "col s7 m8 l6 offset-m1 offset-l2" },
-                    React.createElement("input", { id: "search", className: "", type: "search", placeholder: "Enter search term here", required: true, value: this.state.text, onChange: this.handleTextChange })
+                    "form",
+                    { onSubmit: this.handleFormSubmit },
+                    React.createElement(
+                        "div",
+                        { className: "col s12 m8 l6 offset-m2 offset-l3" },
+                        React.createElement("input", { id: "search", className: "", type: "search", placeholder: "Enter search term here", required: true, value: this.state.text, onChange: this.handleTextChange })
+                    )
                 )
             ),
             React.createElement(
                 "div",
-                { className: "col s5 m2 l1", id: "randomButton" },
+                { "class": "row" },
                 React.createElement(
-                    "a",
-                    { href: "https://en.wikipedia.org/wiki/Special:Random", target: "_blank", className: "btn" },
-                    "Random"
+                    "div",
+                    { className: "center-align", id: "randomButton" },
+                    React.createElement(
+                        "a",
+                        { href: "https://en.wikipedia.org/wiki/Special:Random", target: "_blank", className: "btn" },
+                        "Random"
+                    )
                 )
             )
         );
