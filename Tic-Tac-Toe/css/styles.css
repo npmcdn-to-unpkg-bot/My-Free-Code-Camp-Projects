@@ -60,3 +60,15 @@
 .low-opacity {
     opacity: .2;
 }
+
+@media screen and (max-width: 500px)
+{
+	.wrapper {
+		transform: scale(0.59)	
+		transform-origin: 0 0;
+    }
+    
+	.wrapper h1 {
+	    display: none
+	}
+}
