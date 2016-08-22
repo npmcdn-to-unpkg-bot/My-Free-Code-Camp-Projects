@@ -131,6 +131,7 @@ body {
   width: 220px;
   position: absolute;
   opacity: 0.3;
+  cursor: pointer;
 }
 .color-button.active {
   opacity: 1;
