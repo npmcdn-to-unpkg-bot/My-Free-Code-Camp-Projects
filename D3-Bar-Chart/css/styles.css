@@ -1,0 +1,39 @@
+#chart {
+  margin-top: 60px;
+  text-align: center;
+}
+#chart svg {
+  background-color: #eee;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.bar {
+  fill: #4682b4;
+}
+.bar:hover {
+  fill: #ffa500;
+}
+.tooltip {
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+}
+.tooltip:after {
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0,0,0,0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+  top: 100%;
+  left: 0;
+}
+#title {
+  font-size: 50px;
+}
